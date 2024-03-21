@@ -9,6 +9,10 @@ fn main() {
     }
 
     matriz();
+
+    println!("É fim de semana? {}", eh_fim_de_semana(DiaDaSemana::Quarta));
+    let dia: DiaDaSemana = DiaDaSemana::Sexta;
+
 }
 
 fn matriz(){
@@ -21,5 +25,23 @@ fn matriz(){
         for item in linha {
             println!("Item = {}", item);
         }
+    }
+}
+
+enum DiaDaSemana {
+    Domingo,
+    Segunda,
+    Terça,
+    Quarta,
+    Quinta,
+    Sexta,
+    Sábado
+}
+
+fn eh_fim_de_semana(dia_da_semana: DiaDaSemana) -> bool
+{
+    match dia_da_semana {
+        DiaDaSemana::Domingo | DiaDaSemana::Sábado => true,
+        _ => false
     }
 }
