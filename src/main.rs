@@ -77,11 +77,21 @@ fn ler_arquivo(caminho_arquivo: String) -> Option<String> {
 }
 
 fn vectors() {
-    let mut notas:Vec<f32> = vec![10.0, 8.0, 6.5];
+    let mut notas:Vec<f32> = Vec::with_capacity(4);
+    notas.push(10.0);
+    notas.push(8.0);
+    notas.push(6.5);
+    println!("Capacidade = {}", notas.capacity());
 
     println!("{:?}", notas);
 
-    notas.push(6.8);
+    notas.push(6.8); 
+    notas.push(7.0);
+    /*
+    Quando o num de elementos estrapola a capacidade, ela é dobrada.
+    Desperdiçar um pouco de memória é melhor do que realocar
+    */
+    println!("Capacidade = {}", notas.capacity());
     println!("{:?}", notas);
 
     println!("Nota 1 = {}", notas[0]);
@@ -95,7 +105,7 @@ fn vectors() {
     while let Some(nota) = notas.pop() {
     println!("Último valor = {}", nota);
     }
-     */
+    */
 
     for nota in &notas {
         println!("Nota = {}", nota);
