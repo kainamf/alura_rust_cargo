@@ -76,6 +76,22 @@ fn ler_arquivo(caminho_arquivo: String) -> Option<String> {
     Some(String::from("Algum conteudo"))
 }
 
+fn vectors() {
+    let mut notas:Vec<f32> = vec![10.0, 8.0, 6.5];
+
+    println!("{:?}", notas);
+
+    notas.push(6.8);
+    println!("{:?}", notas);
+
+    println!("Nota 1 = {}", notas[0]);
+
+    println!("Nota 6 = {}", match notas.get(7) {
+        Some(n) => *n,
+        None => 0.0
+    });
+}
+
 fn main() {
     let notas: [f32; 4] = [6.5; 4];
     let inteiro: usize = 0;
@@ -93,4 +109,6 @@ fn main() {
     cores();
 
     conteudo_opcional();
+
+    vectors();
 }
