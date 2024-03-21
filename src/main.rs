@@ -90,6 +90,17 @@ fn vectors() {
         Some(n) => *n,
         None => 0.0
     });
+
+    /*
+    while let Some(nota) = notas.pop() {
+    println!("Último valor = {}", nota);
+    }
+     */
+
+    for nota in &notas {
+        println!("Nota = {}", nota);
+    }
+    println!("{:?}", notas);
 }
 
 fn main() {
