@@ -113,6 +113,30 @@ fn vectors() {
     println!("{:?}", notas);
 }
 
+
+struct Titular {
+    nome: String,
+    sobrenome: String
+}
+struct Conta {
+    titular: Titular,
+    saldo: f64
+}
+
+fn conta_corrente() {
+    let titular = Titular{nome: String::from("Vinicius"), sobrenome: String::from("Dias")};
+    let conta: Conta = Conta{
+        titular,
+        saldo: 100.0
+    };
+
+    println!("Dados da conta: Titular = {} {}, Saldo = {}",
+    conta.titular.nome,
+    conta.titular.sobrenome,
+    conta.saldo
+    );
+}
+
 fn main() {
     let notas: [f32; 4] = [6.5; 4];
     let inteiro: usize = 0;
@@ -132,4 +156,6 @@ fn main() {
     conteudo_opcional();
 
     vectors();
+
+    conta_corrente();
 }
